@@ -63,7 +63,7 @@ cmap ((+ 2) . (*2)) x -- [ 2.0, 4.0
 flatten x -- [0.0, 1.0, 2.0, 3.0]
 ```
 
-[**Benchmarks**]()
+[**Benchmarks**](http://mdibaiee.github.io/numeric-libs-overview/benchmarks/hmatrix.html)
 
 **Links**: [Hackage](http://hackage.haskell.org/package/hmatrix) [GitHub](https://github.com/albertoruiz/hmatrix) . [Homepage](http://dis.um.es/~alberto/hmatrix/hmatrix.html)
 
