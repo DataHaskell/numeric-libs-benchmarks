@@ -14,6 +14,43 @@ These overviews include:
 Libraries
 =========
 
+vector
+------
+An efficient implementation of Int-indexed arrays (both mutable and immutable), with a powerful loop optimisation framework.
+
+**Example code**:
+let x = fromList [0..5]
+
+length x -- 6
+null x -- False
+
+-- Indexing
+x ! 1 -- 1
+head x -- 0
+last x -- 5
+
+-- Slicing
+slice 2 3 x -- [2, 3, 4]
+splitAt 2 x -- ([0, 1], [2, 3, 4, 5])
+
+-- Prepending and Appending
+cons (-1) x -- [-1, 0, 1, 2, 3, 4, 5]
+snoc x 6 -- [0, 1, 2, 3, 4, 5, 6]
+
+-- Concatenation
+x ++ x -- [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
+concat [x, x] -- [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
+
+-- Update
+x // [(0, 1), (2, 6)] -- [1, 1, 6, 3, 4, 5]
+
+map (+2) x -- [2, 3, 4, 5, 6, 7]
+```
+
+[**Benchmarks**](http://mdibaiee.github.io/numeric-libs-overview/benchmarks/vector.html)
+
+**Links**: [Hackage](http://hackage.haskell.org/package/vector) . [GitHub](https://github.com/haskell/vector)
+
 hmatrix
 -------
 hmatrix is a linear algebra library and matrix computations.
@@ -64,6 +101,9 @@ flatten x -- [0.0, 1.0, 2.0, 3.0]
 ```
 
 [**Benchmarks**](http://mdibaiee.github.io/numeric-libs-overview/benchmarks/hmatrix.html)
+
+**Notes**:
+* Uses the [vector](#vector) library under the hood (specifically, [`Data.Vector.Storable`](http://hackage.haskell.org/package/vector-0.11.0.0/docs/Data-Vector-Storable.html))
 
 **Links**: [Hackage](http://hackage.haskell.org/package/hmatrix) . [GitHub](https://github.com/albertoruiz/hmatrix) . [Homepage](http://dis.um.es/~alberto/hmatrix/hmatrix.html)
 
