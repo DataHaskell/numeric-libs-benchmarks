@@ -19,6 +19,7 @@ vector
 An efficient implementation of Int-indexed arrays (both mutable and immutable), with a powerful loop optimisation framework.
 
 **Example code**:
+```haskell
 let x = fromList [0..5]
 
 length x -- 6
