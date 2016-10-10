@@ -12,18 +12,7 @@ main = defaultMain [
 
          bench "matrix-vector addition" $ w (\_ -> sampleDiag + sampleDiag),
 
-         bench "transpose" $ w (\_ -> tr sampleDiag),
-
-         bench "eigenvalues" $ w (\_ -> eigenvalues sampleDiag),
-         bench "singularValues" $ w (\_ -> singularValues sampleDiag),
-
-         bench "svd" $ w (\_ -> svd sampleDiag),
-         bench "thin svd" $ w (\_ -> thinSVD sampleDiag),
-
-         bench "nullspace" $ w (\_ -> nullspace sampleDiag),
-         bench "orthogonal" $ w (\_ -> orth sampleDiag),
-
-         bench "determinant" $ w (\_ -> det sampleDiag)
+         bench "transpose" $ w (\_ -> tr sampleDiag)
        ]
   where
     w f = f `whnf` 0

@@ -4,6 +4,8 @@ numeric-libs-overview
 An overview of different Haskell numeric libraries. This is intended to be a place to compare different numeric libraries
 by their ease of use, performance and more.
 
+Libraries are categorised and you should compare the libraries in the same category with each other.
+
 _Pull requests are welcome if you want to add a library!_
 
 These overviews include:
@@ -11,7 +13,7 @@ These overviews include:
 * Example code
 * Links to hackage, github and the homepage if available
 
-Libraries
+Vector representation libraries
 =========
 
 vector
@@ -52,6 +54,9 @@ map (+2) x -- [2, 3, 4, 5, 6, 7]
 
 **Links**: [Hackage](http://hackage.haskell.org/package/vector) . [GitHub](https://github.com/haskell/vector)
 
+Matrix representation libraries
+===============================
+
 hmatrix
 -------
 hmatrix is a linear algebra library and matrix computations.
@@ -87,10 +92,6 @@ tr x -- [ 0.0, 2.0
 r ?? (All, Take 2) -- [ 0.7764496757867578,    1.246311658930589
                    -- , -2.540045307941425, -0.20975584071908912 ]
 
--- SVD
-
-(u, s, v) = svd r
-
 -- Mapping over matrices
 
 cmap ((+ 2) . (*2)) x -- [ 2.0, 4.0
@@ -102,6 +103,42 @@ flatten x -- [0.0, 1.0, 2.0, 3.0]
 ```
 
 [**Benchmarks**](http://mdibaiee.github.io/numeric-libs-overview/benchmarks/hmatrix.html)
+
+**Notes**:
+* Uses the [vector](#vector) library under the hood (specifically, [`Data.Vector.Storable`](http://hackage.haskell.org/package/vector-0.11.0.0/docs/Data-Vector-Storable.html))
+
+**Links**: [Hackage](http://hackage.haskell.org/package/hmatrix) . [GitHub](https://github.com/albertoruiz/hmatrix) . [Homepage](http://dis.um.es/~alberto/hmatrix/hmatrix.html)
+
+Linear algebra libraries
+========================
+
+hmatrix
+-------
+hmatrix is a linear algebra library and matrix computations.
+
+**Example code**:
+```haskell
+
+-- Creating matrices
+r <- randn 2 2
+r -- [  0.7668461757288327, 0.5573308002071669
+  -- , -0.7412791132378888,  1.001032678483079 ]
+
+-- SVD
+(u, s, v) = svd r
+(u, s, v) = thinSVD r
+
+eigenvalues r
+
+singularValues r
+
+nullspace r
+orthogonal r
+
+determinant r
+```
+
+[**Benchmarks**](http://mdibaiee.github.io/numeric-libs-overview/benchmarks/hmatrix-linear-algebra.html)
 
 **Notes**:
 * Uses the [vector](#vector) library under the hood (specifically, [`Data.Vector.Storable`](http://hackage.haskell.org/package/vector-0.11.0.0/docs/Data-Vector-Storable.html))
