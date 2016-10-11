@@ -50,7 +50,7 @@ x // [(0, 1), (2, 6)] -- [1, 1, 6, 3, 4, 5]
 map (+2) x -- [2, 3, 4, 5, 6, 7]
 ```
 
-[**Benchmarks**](http://mdibaiee.github.io/numeric-libs-overview/benchmarks/vector.html)
+[**Benchmarks**](http://datahaskell.github.io/numeric-libs-overview/benchmarks/vector.html)
 
 **Links**: [Hackage](http://hackage.haskell.org/package/vector) . [GitHub](https://github.com/haskell/vector)
 
@@ -102,7 +102,7 @@ cmap ((+ 2) . (*2)) x -- [ 2.0, 4.0
 flatten x -- [0.0, 1.0, 2.0, 3.0]
 ```
 
-[**Benchmarks**](http://mdibaiee.github.io/numeric-libs-overview/benchmarks/hmatrix.html)
+[**Benchmarks**](http://datahaskell.github.io/numeric-libs-overview/benchmarks/hmatrix.html)
 
 **Notes**:
 * Uses the [vector](#vector) library under the hood (specifically, [`Data.Vector.Storable`](http://hackage.haskell.org/package/vector-0.11.0.0/docs/Data-Vector-Storable.html))
@@ -138,7 +138,7 @@ orthogonal r
 determinant r
 ```
 
-[**Benchmarks**](http://mdibaiee.github.io/numeric-libs-overview/benchmarks/hmatrix-linear-algebra.html)
+[**Benchmarks**](http://datahaskell.github.io/numeric-libs-overview/benchmarks/hmatrix-linear-algebra.html)
 
 **Notes**:
 * Uses the [vector](#vector) library under the hood (specifically, [`Data.Vector.Storable`](http://hackage.haskell.org/package/vector-0.11.0.0/docs/Data-Vector-Storable.html))
